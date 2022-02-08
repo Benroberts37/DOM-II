@@ -12,8 +12,12 @@ import './less/index.less'
     window.addEventListener('copy', () =>{
         navigator.clipboard.readText()
         .then(text =>{
+            if (text === 'the') {
+                event.preventDefault()
             heading.textContent += text
+            }
         })
+      
     })
     //Click event type 
     document.body.addEventListener('click', event => {
